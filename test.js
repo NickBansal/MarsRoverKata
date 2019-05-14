@@ -1,4 +1,4 @@
-const MarsRover = require(".");
+const MarsRover = require("./marsRover");
 
 describe("Mars Rover", () => {
     describe("Coordinates given for the Mars Rover", () => {
