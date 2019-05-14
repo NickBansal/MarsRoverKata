@@ -84,5 +84,10 @@ describe("Mars Rover", () => {
             rover.commands("M");
             expect(rover.location).toEqual([2, 1]);
         });
+        it("Should move the rover west direction", () => {
+            const rover = new MarsRover([2, 2], "W");
+            rover.commands("M");
+            expect(rover.location).toEqual([1, 2]);
+        });
     });
 });

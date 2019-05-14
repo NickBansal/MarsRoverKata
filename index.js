@@ -22,6 +22,9 @@ class MarsRover {
         if (x === "S") {
             this.location[1] -= 1;
         }
+        if (x === "W") {
+            this.location[0] -= 1;
+        }
     }
 
     commands(list) {
