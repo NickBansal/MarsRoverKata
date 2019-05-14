@@ -15,6 +15,15 @@ class MarsRover {
         this.direction = direction === "L" ? lookupLeft[this.direction] : lookupRight[this.direction];
     }
 
+    move(x) {
+        if (x === "N") {
+            this.location[1] += 1;
+        }
+        if (x === "S") {
+            this.location[1] -= 1;
+        }
+    }
+
     commands(list) {
         if (list) {
             this.commandList = list.split("").filter(command =>
@@ -24,6 +33,9 @@ class MarsRover {
         this.commandList.forEach(item => {
             if (item === "L" || item === "R") {
                 this.rotate(item);
+            }
+            if (item === "M") {
+                this.move(this.direction);
             }
         });
         return this.commandList;

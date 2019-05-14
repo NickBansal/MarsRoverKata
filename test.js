@@ -71,12 +71,18 @@ describe("Mars Rover", () => {
                 expect(rover.direction).toBe("S");
             });
         });
-        describe("M Commands", () => {
-            it("Should move the rover depending on the orientation", () => {
-                rover.commands("M");
-            });
-        });
     });
 
-
+    describe("M Commands", () => {
+        it("Should move the rover north direction", () => {
+            const rover = new MarsRover([2, 2], "N");
+            rover.commands("M");
+            expect(rover.location).toEqual([2, 3]);
+        });
+        it("Should move the rover south direction", () => {
+            const rover = new MarsRover([2, 2], "S");
+            rover.commands("M");
+            expect(rover.location).toEqual([2, 1]);
+        });
+    });
 });
