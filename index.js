@@ -9,12 +9,14 @@ class MarsRover {
         this.commandList = [];
     }
 
+    // Create look up objects for the rotation
     rotate(direction) {
         const lookupLeft = { "E": "N", "N": "W", "W": "S", "S": "E" };
         const lookupRight = { "E": "S", "S": "W", "W": "N", "N": "E" };
         this.direction = direction === "L" ? lookupLeft[this.direction] : lookupRight[this.direction];
     }
 
+    // Navigate using the stored direction
     move(x) {
         if (x === "N") {
             this.location[1] += 1;
@@ -37,12 +39,9 @@ class MarsRover {
             );
         }
         this.commandList.forEach(item => {
-            if (item === "L" || item === "R") {
-                this.rotate(item);
-            }
-            if (item === "M") {
+            item === "L" || item === "R" ?
+                this.rotate(item) :
                 this.move(this.direction);
-            }
         });
         return this.commandList;
     }
