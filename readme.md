@@ -31,3 +31,9 @@ The terminal will then instruct you to input your grid coordinates. This will be
 you can enter as many pairs of rover details and instructions as you like  and when finished simply type 'end'
 
 Finally the output will be shown in the terminal 
+
+## Testing
+To test the code type into the following into the terminal
+```js
+$ npm run test
+```
