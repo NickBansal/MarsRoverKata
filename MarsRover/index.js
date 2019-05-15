@@ -44,7 +44,7 @@ class RoverMovements {
                 this.rotate(instruction) :
                 this.move();
         });
-        return this.xCoord, this.yCoord, this.direction;
+        return `${this.xCoord} ${this.yCoord} ${this.direction}`;
     }
 }
 
