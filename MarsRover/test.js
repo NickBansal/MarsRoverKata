@@ -68,4 +68,16 @@ describe("Mars Rover", () => {
             expect(movement.direction).toBe("N");
         });
     });
+    describe("Testing the instructions method works", () => {
+        it("Case 1", () => {
+            const rover = new MarsRover(1, 2, "N");
+            let movement = new RoverMovements([5, 5], rover);
+            expect(movement.instructions("LMLMLMLMM")).toBe("1 3 N");
+        });
+        it("Case 2", () => {
+            const rover = new MarsRover(3, 3, "E");
+            let movement = new RoverMovements([5, 5], rover);
+            expect(movement.instructions("MMRMMRMRRM")).toBe("5 1 E");
+        });
+    });
 });
