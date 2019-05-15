@@ -4,16 +4,6 @@ class MarsRover {
         this.yCoord = yCoord;
         this.direction = direction;
     }
-}
-
-class RoverMovements {
-    constructor(grid, { xCoord, yCoord, direction }) {
-        this.grid = grid;
-        this.xCoord = xCoord;
-        this.yCoord = yCoord;
-        this.direction = direction;
-    }
-
     move() {
         if (this.direction === "N") {
             this.yCoord += 1;
@@ -34,6 +24,12 @@ class RoverMovements {
         const lookupRight = { "E": "S", "S": "W", "W": "N", "N": "E" };
         this.direction = direction === "L" ? lookupLeft[this.direction] : lookupRight[this.direction];
     }
+}
+class RoverMovements {
+    constructor(grid, rover) {
+        this.grid = grid;
+        this.rover = rover;
+    }
 
     instructions(list) {
         const instructionsArray = list.split("").filter(instruction =>
@@ -41,10 +37,10 @@ class RoverMovements {
         );
         instructionsArray.forEach(instruction => {
             instruction === "L" || instruction === "R" ?
-                this.rotate(instruction) :
-                this.move();
+                this.rover.rotate(instruction) :
+                this.rover.move();
         });
-        return `${this.xCoord} ${this.yCoord} ${this.direction}`;
+        return `${this.rover.xCoord} ${this.rover.yCoord} ${this.rover.direction}`;
     }
 }
 
