@@ -1,5 +1,4 @@
 const { MarsRover, RoverMovements } = require("./index");
-// jest.mock("./index");
 
 describe("Mars Rover", () => {
     describe("Testing the move method", () => {

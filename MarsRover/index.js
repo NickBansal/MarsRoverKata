@@ -4,6 +4,7 @@ class MarsRover {
         this.yCoord = yCoord;
         this.direction = direction;
     }
+
     move() {
         if (this.direction === "N") {
             this.yCoord += 1;
@@ -30,7 +31,6 @@ class RoverMovements {
         this.grid = grid;
         this.rover = rover;
     }
-
     instructions(list) {
         const instructionsArray = list.split("").filter(instruction =>
             (instruction === "L" || instruction === "M" || instruction === "R")
