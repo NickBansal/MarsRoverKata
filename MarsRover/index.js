@@ -26,7 +26,7 @@ class MarsRover {
         this.direction = direction === "L" ? lookupLeft[this.direction] : lookupRight[this.direction];
     }
 }
-class RoverMovements {
+class RoverInstructions {
     constructor(grid, rover) {
         this.grid = grid;
         this.rover = rover;
@@ -44,4 +44,4 @@ class RoverMovements {
     }
 }
 
-module.exports = { RoverMovements, MarsRover };
+module.exports = { RoverInstructions, MarsRover };
