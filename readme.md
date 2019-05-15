@@ -26,3 +26,8 @@ Whilst in the main directory, run the following command in the terminal to execu
 ```js
 $ node index
 ```
+The terminal will then instruct you to input your grid coordinates. This will be followed by your rover coordinates and orientation. And then  followed by the instructions.
+
+you can enter as many pairs of rover details and instructions as you like  and when finished simply type 'end'
+
+Finally the output will be shown in the terminal 

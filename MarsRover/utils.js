@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const { MarsRover, RoverInstructions } = require("./index");
+
 const printNextGeneration = (grid) => {
     const gridCoords = grid[0].map(Number);
     let roverName = [];
@@ -17,7 +18,7 @@ const printNextGeneration = (grid) => {
     process.exit();
 };
 
-module.exports = { printNextGeneration };
+module.exports = printNextGeneration;
 
 
 

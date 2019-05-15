@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { printNextGeneration } = require("./MarsRover/utils");
+const printNextGeneration = require("./MarsRover/utils");
 const grid = [];
 
 process.stdout.write(`\nPlease enter your grid coordinates below - MUST include spaces\n
