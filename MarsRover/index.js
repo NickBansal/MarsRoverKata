@@ -32,6 +32,21 @@ class RoverInstructions {
         this.rover = rover;
     }
 
+    gridLock() {
+        if (this.rover.xCoord > this.grid[0]) {
+            this.rover.xCoord -= this.grid[0] + 1;
+        }
+        if (this.rover.yCoord > this.grid[1]) {
+            this.rover.yCoord -= this.grid[1] + 1;
+        }
+        if (this.rover.xCoord < 0) {
+            this.rover.xCoord += this.grid[0] + 1;
+        }
+        if (this.rover.yCoord < 0) {
+            this.rover.yCoord += this.grid[1] + 1;
+        }
+    }
+
     instructions(list) {
         const instructionsArray = list.split("").filter(instruction =>
             (instruction === "L" || instruction === "M" || instruction === "R")
@@ -40,6 +55,7 @@ class RoverInstructions {
             instruction === "L" || instruction === "R" ?
                 this.rover.rotate(instruction) :
                 this.rover.move();
+            this.gridLock();
         });
         return `${this.rover.xCoord} ${this.rover.yCoord} ${this.rover.direction}`;
     }

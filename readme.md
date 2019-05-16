@@ -8,7 +8,7 @@ I created a 'MarsRover' folder which contained an index file for the classes, ut
 The main index file is where the code will be run from.
 
 ## Assumptions
-Not much information was given about the grid coordinates as they did not effect the outcome at all, but as they were mentioned in the brief I felt the need to leave them in the RoverInstructions class. I have not included functionality in the grid to have limitations or wrap-arounds.
+Not much information was given about the grid coordinates as they did not effect the outcome at all, but as they were mentioned in the brief I felt the need to use them in the RoverInstructions class. I assumed that the rover would wrap around the grid once it goes off so I have decided to implement a gridlock function to perform this
 I also assumed the following for the input:
 * The grid input would include 2 numbers seperated by a space
 * The rover coordinate and orientation would consist of a number, number, letter again each seperated by a space

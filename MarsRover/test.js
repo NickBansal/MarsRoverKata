@@ -63,6 +63,33 @@ describe("Mars Rover", () => {
             expect(rover.direction).toBe("N");
         });
     });
+    describe("Testing that the gridlock method", () => {
+        it("Should wrap around once the rover goes out of bounds - North", () => {
+            const rover = new MarsRover(5, 5, "N");
+            let movement = new RoverInstructions([5, 5], rover);
+            expect(movement.instructions("M")).toBe("5 0 N");
+        });
+        it("Should wrap around once the rover goes out of bounds - South", () => {
+            const rover = new MarsRover(0, 0, "S");
+            let movement = new RoverInstructions([0, 5], rover);
+            expect(movement.instructions("M")).toBe("0 5 S");
+        });
+        it("Should wrap around once the rover goes out of bounds - East", () => {
+            const rover = new MarsRover(5, 5, "E");
+            let movement = new RoverInstructions([5, 5], rover);
+            expect(movement.instructions("M")).toBe("0 5 E");
+        });
+        it("Should wrap around once the rover goes out of bounds - West", () => {
+            const rover = new MarsRover(0, 0, "W");
+            let movement = new RoverInstructions([5, 5], rover);
+            expect(movement.instructions("M")).toBe("5 0 W");
+        });
+        it("Should wrap around once the rover goes out of bounds - West", () => {
+            const rover = new MarsRover(0, 0, "W");
+            let movement = new RoverInstructions([15, 15], rover);
+            expect(movement.instructions("M")).toBe("15 0 W");
+        });
+    });
     describe("Testing the instructions method works", () => {
         it("Case 1", () => {
             const rover = new MarsRover(1, 2, "N");
@@ -73,6 +100,11 @@ describe("Mars Rover", () => {
             const rover = new MarsRover(3, 3, "E");
             let movement = new RoverInstructions([5, 5], rover);
             expect(movement.instructions("MMRMMRMRRM")).toBe("5 1 E");
+        });
+        it("Case 3", () => {
+            const rover = new MarsRover(0, 3, "E");
+            let movement = new RoverInstructions([5, 5], rover);
+            expect(movement.instructions("MMMMRMM")).toBe("4 1 S");
         });
     });
 });
