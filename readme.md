@@ -1,16 +1,6 @@
 # Mars Rover
 
 This exercise creates the 'Mars Rover' kata using Javascript, TDD using jest and linting using eslint.
-The following rules needed to be applied:
-
-**Input:**
-* The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0.
-* The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover’s position, and the second line is a series of instructions telling the rover how to explore the plateau.
-* The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
-* Each rover will be finished sequentially, which means that the second rover won’t start to move until the first one has finished moving.
-
-**Output:**
-* The output for each rover should be its final co-ordinates and heading.
 
 ## Design
 I decided to apply SOLID methodology to my classes to make each class have limited responsibilities and breaking them down to be more reusable.
@@ -18,7 +8,7 @@ I created a 'MarsRover' folder which contained an index file for the classes, ut
 The main index file is where the code will be run from.
 
 ## Assumptions
-Not much information was given about the grid coordinates and they did not effect the outcome at all, but as they were mentioned in the brief I felt the need to leave them in the RoverInstructions class. I have not included functionality in the grid to have limitations or wrap-arounds.
+Not much information was given about the grid coordinates as they did not effect the outcome at all, but as they were mentioned in the brief I felt the need to leave them in the RoverInstructions class. I have not included functionality in the grid to have limitations or wrap-arounds.
 I also assumed the following for the input:
 * The grid input would include 2 numbers seperated by a space
 * The rover coordinate and orientation would consist of a number, number, letter again each seperated by a space
