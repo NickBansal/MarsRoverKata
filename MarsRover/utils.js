@@ -2,21 +2,21 @@
 const { MarsRover, RoverInstructions } = require("./index");
 
 const printNextGeneration = (commands) => {
-    const gridCoords = commands[0].map(Number);
+    let gridCoords;
     let roverName = [];
     let instructionsName = [];
 
     process.stdout.write("\n");
-    commands.forEach(() => {
-
+    commands.forEach((command, index) => {
+        if (index === 0) {
+            gridCoords = command.map(Number);
+        } else if (index % 2 !== 0) {
+            roverName[index] = new MarsRover(Number(commands[index][0]), Number(commands[index][1]), commands[index][2]);
+        } else {
+            instructionsName[index] = new RoverInstructions(gridCoords, roverName[index - 1]);
+            process.stdout.write(`${instructionsName[index].instructions(commands[index].join(" "))}\n`);
+        }
     });
-    for (let i = 1; i < commands.length; i += 2) {
-        roverName[i] = new MarsRover(Number(commands[i][0]), Number(commands[i][1]), commands[i][2]);
-    }
-    for (let i = 2; i < commands.length; i += 2) {
-        instructionsName[i] = new RoverInstructions(gridCoords, roverName[i - 1]);
-        process.stdout.write(`${instructionsName[i].instructions(commands[i].join(" "))}\n`);
-    }
     process.stdout.write("\n");
     process.exit();
 };
