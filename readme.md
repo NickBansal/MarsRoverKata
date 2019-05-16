@@ -3,7 +3,7 @@
 This exercise creates the 'Mars Rover' kata using Javascript, TDD using jest and linting using eslint.
 
 ## Design
-I decided to apply SOLID methodology to my classes to make each class have limited responsibilities and breaking them down to be more reusable.
+I decided to apply SOLID methodology to my classes to make each class hold limited responsibilities and breaking them down to be more reusable.
 I created a 'MarsRover' folder which contained an index file for the classes, utils file for the functions and test file for the testing to make the code more modular.
 The main index file is where the code will be run from.
 
