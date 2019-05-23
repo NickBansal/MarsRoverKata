@@ -26,6 +26,7 @@ class MarsRover {
         this.direction = direction === "L" ? lookupLeft[this.direction] : lookupRight[this.direction];
     }
 }
+
 class RoverInstructions {
     constructor(grid, rover) {
         this.grid = grid;
@@ -33,17 +34,18 @@ class RoverInstructions {
     }
 
     gridLock() {
-        if (this.rover.xCoord > this.grid[0]) {
-            this.rover.xCoord -= this.grid[0] + 1;
+        let { xCoord, yCoord } = this.rover;
+        if (xCoord > this.grid[0]) {
+            xCoord -= this.grid[0] + 1;
         }
-        if (this.rover.yCoord > this.grid[1]) {
-            this.rover.yCoord -= this.grid[1] + 1;
+        if (yCoord > this.grid[1]) {
+            yCoord -= this.grid[1] + 1;
         }
-        if (this.rover.xCoord < 0) {
-            this.rover.xCoord += this.grid[0] + 1;
+        if (xCoord < 0) {
+            xCoord += this.grid[0] + 1;
         }
-        if (this.rover.yCoord < 0) {
-            this.rover.yCoord += this.grid[1] + 1;
+        if (yCoord < 0) {
+            yCoord += this.grid[1] + 1;
         }
     }
 
